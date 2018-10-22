@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Test Process Format Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 508 Conformance Test Process and Results</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css'>
+<link rel='stylesheet' href='https://www.w3schools.com/lib/w3-theme-black.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.13/css/all.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <!-- Navbar -->
+<nav>
+  <div class="w3-top">
+    <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+      <div id="skip">
+        <a class="element-invisible element-focusable" href="#ConformanceTests">Skip to Main Content</a>
+      </div>
+
+      <a href="javascript:void(0)" onclick="ShowAll()" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Show All Test Instruction Detail</a>      
+      <a href="javascript:void(0)" onclick="HideAll()" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Hide All Test Instruction Detail</a>
+      <label class="w3-bar-item" for="SelectWebSW">Filter Tests by content Type: </label>
+        <select class="w3-bar-item" id="SelectWebSW" onchange="WebSWFilter(this)">
+          <option>ALL (SW and WEB)</option>
+          <option>SW ONLY</option>
+          <option>WEB ONLY</option>
+      </select>
+      <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fas fa-bars" aria-role="img" aria-label="Open Contents Navigation"></i></a>
+    </div>
+  </div>
+</nav>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large">
+    <i class="fas fa-times" aria-role="img" aria-label="Close Menu"></i>
+  </a>
+  <h1 class="w3-bar-item" style="font-size:1.5em"><b>Contents</b></h1>
+  <a class="w3-bar-item w3-button w3-hover-black" onclick="w3_close()" href="#">Top (Section 508 Conformance Tests)</a>
+  <a class="w3-bar-item w3-button w3-hover-black" onclick="w3_close()" href="#language">Language</a>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<main>
+  <div class="w3-main" style="margin-left:250px">
+    <div class="w3-container w3-row w3-padding-32">
+
+      <h1 id="ConformanceTests">Section 508 Conformance Tests for Applications</h1>
+      <p>
+        The content below is intended to provide a demo of a possible format for presenting the Trusted Tester test process.
+      </p>
+
+      <!-- Language of Page -->
+      <div>
+        <h2 id="language">Language</h2>
+        <h3>Language of Page</h3>
+        <div>
+          <p>Identify all pages with text. Review the page content to identify the default human language of the page (the language in which most of the page is presented).
+          </p>
+          <div>
+
+            <!--Language of Page for WEB-->
+            <div class="WebTest" id="divweb1">
+              <div class="test-intro">
+                <p>
+                  <h4><strong>FOR WEB:</strong> Use <abbr title="Accessible Name and Description Inspector">ANDI</abbr> to check that:</p>
+                </h4>
+              </div>
+
+              <div class="w3-row">
+                <div class="w3-container">
+
+                  <table width="100%">
+                    <tr>
+                      <th width="10%">Test Name</th>
+                      <th width="5%">Test ID</th>
+                      <th width="65%">Test Condition</th>
+                      <th width="20%">Result</th>
+                    </tr>
+                    <tr>
+                      <th class="colth">3.1.1-page-language-defined-Web</th>
+                      <td>12.A</td>
+                      <td>The <code>lang</code> attribute is defined on the <code><i><</i>html<i>></i></code> element for the page. (
+                        <span id="LangPage-Show" class="InstructionShow">
+                        <a href="javascript:void(0)" onclick="ShowDetail(this)">Show instruction detail <i class="fas fa-angle-double-right" aria-hidden="true"></i></a></span>
+                        <span id="LangPage-Hide" class="InstructionHide" style="display:none">
+                        <a href="javascript:void(0)" onclick="HideDetail(this)">Hide instruction detail <i class="fas fa-angle-double-down" aria-hidden="true"></i></a></span>)
+
+                        <div class="w3-padding-16 InstructionDetail" id="LangPage-Detail" style="display:none">
+                          <p>Use sANDI (Select "Structures" from the ANDI module dropdown, then select lang attributes) to check that the lang attribute is defined on the <code><i><</i>html<i>></i></code>  element for the page.</p>
+                          <p>Launch ANDI from your browser's bookmarks, then select "structures" from the "Select Module" dropdown menu.</p>
+                          <img src="https://section508coordinators.github.io/BaselineTestPages/TestPages/images/Select_sANDI.png" width="100%" alt="Screen capture of selecting 'structures' from the 'Select Module' dropdown menu"></img>
+                          <p>Click the "lang attributes" link in the sANDI module. Locate the markup added to the web page that identifies the element to which the attribute is applied and the language defined in the language attribute value (e.g., "en" for English).</p>
+                          <img src="https://section508coordinators.github.io/BaselineTestPages/TestPages/images/LangAttribute.png" width="100%" alt="Screen capture of selecting the 'lang attributes' link with the markup for the lang attribute highlighted on the screen"></img>
+                          <p><strong>Note:</strong></p>
+                          <ul>
+                            <li>The primary language subtag is the first 2 or 3 character code in the value of the lang attribute. (Do not test additional language specifications that may follow the primary language subtag.)</li>
+                            <li>The primary language subtag must conform to the <a href="http://www.iana.org/assignments/language-subtag-registry">Internet Assigned Numbers Authority's (IANA) Language subtag registry.</a></li>
+                          </ul>
+                        </div>
+                      </td>
+                      <td>
+                        <select id="3.1.1-page-language-defined-web" onchange="ShowHide_description(this)">
+                        <option value="Null"></option>
+                        <option value="Pass">Pass</option>
+                        <option value="Fail">Fail</option>
+                        <option value="Does Not Apply">Does Not Apply</option>
+                      </select>
+                        <div id="3.1.1-page-language-defined-web-description-div" style="display:none">
+                          <label for="3.1.1-page-language-defined-web-description">Failure Description:</label>
+                          <div>
+                            <textarea id="3.1.1-page-language-defined-web-description" width="100%"></textarea>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>3.1.1-page-language-match-Web</th>
+                      <td>12.B</td>
+                      <td>The value of the <code>lang</code> attribute matches the determined default human language for the page. (
+                        <span id="LangMatchPage-Show" class="InstructionShow">
+                        <a href="javascript:void(0)" onclick="ShowDetail(this)">Show instruction detail <i class="fas fa-angle-double-right" aria-hidden="true"></i></a></span>
+                        <span id="LangMatchPage-Hide" class="InstructionHide" style="display:none">
+                        <a href="javascript:void(0)" onclick="HideDetail(this)">Hide instruction detail <i class="fas fa-angle-double-down" aria-hidden="true"></i></a></span>)
+
+                        <div class="w3-padding-16 InstructionDetail" id="LangMatchPage-Detail" style="display:none">
+                          <p>Use sANDI to identify the language attribute value and evaluate whether the defined value matches the default human language for the page.</p>
+                          <p>Launch ANDI from your browser's bookmarks, then select "structures" from the "Select Module" dropdown menu.</p>
+                          <img src="https://section508coordinators.github.io/BaselineTestPages/TestPages/images/Select_sANDI.png" width="100%" alt="Screen capture of selecting 'structures' from the 'Select Module' dropdown menu"></img>
+                          <p>Click the "lang attributes" link in the sANDI module. Locate the markup added to the web page that identifies the element to which the attribute is applied and the language defined in the language attribute value (e.g., "en" for English).</p>
+                          <img src="https://section508coordinators.github.io/BaselineTestPages/TestPages/images/LangAttribute.png" width="100%" alt="Screen capture of selecting the 'lang attributes' link with the markup for the lang attribute highlighted on the screen"></img>
+                          <p>Consult the <a href="http://www.iana.org/assignments/language-subtag-registry">Internet Assigned Numbers Authority's (IANA) Language subtag registry.</a> to determine whether the language is properly defined and matches the default human language for the page.</p>
+                          <p><strong>Note:</strong></p>
+                          <ul>
+                            <li>The primary language subtag is the first 2 or 3 character code in the value of the lang attribute. (Do not test additional language specifications that may follow the primary language subtag.)</li>
+                            <li>The primary language subtag must conform to the <a href="http://www.iana.org/assignments/language-subtag-registry">Internet Assigned Numbers Authority's (IANA) Language subtag registry.</a></li>
+                          </ul>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <select id="3.1.1-page-language-match-web" onchange="ShowHide_description(this)">
+                        <option value="Null"></option>
+                        <option value="Pass">Pass</option>
+                        <option value="Fail">Fail</option>
+                        <option value="Does Not Apply">Does Not Apply</option>
+                      </select>
+                        <div id="3.1.1-page-language-match-web-description-div" style="display:none">
+                          <label for="3.1.1-page-language-match-web-description">Failure Description:</label>
+                          <div>
+                            <textarea id="3.1.1-page-language-match-web-description" width="100%"></textarea>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+            
+            <!--Language of Page for SOFWTARE-->
+            <div class="SWTest">
+              <div class="test-intro">
+                <p>
+                  <h4><strong>FOR SOFTWARE:</strong> Use Inspect to check that:</p>
+                </h4>
+              </div>
+              <div class="w3-row">
+                <div class="w3-container">
+                  <table width="100%">
+                    <tr>
+                      <th width="10%">Test Name</th>
+                      <th width="5%">Test ID</th>
+                      <th width="65%">Test Condition</th>
+                      <th width="25%">Result</th>
+                    </tr>
+                    <tr>
+                      <th class="colth">3.1.1-page-language-defined-SW</th>
+                      <td>12.C</td>
+                      <td>The UIA Culture property is defined on the primary application node of the UIA tree and/or the primary node that contains all of the text content for the application. (
+                        <span id="LangPageSW-Show" class="InstructionShow">
+                        <a href="javascript:void(0)" onclick="ShowDetail(this)">Show instruction detail <i class="fas fa-angle-double-right" aria-hidden="true"></i></a></span>
+                        <span id="LangPageSW-Hide" class="InstructionHide" style="display:none">
+                        <a href="javascript:void(0)" onclick="HideDetail(this)">Hide instruction detail <i class="fas fa-angle-double-down" aria-hidden="true"></i></a></span>)
+
+                        <div class="w3-padding-16 InstructionDetail" id="LangPageSW-Detail" style="display:none">
+                          <p>Here is some additional detail about how to use the ANDI tool to find language attributes on a web page...</p>
+                        </div>
+                      </td>
+                      <td>
+                        <select id="3.1.1-page-language-defined-SW" onchange="ShowHide_description(this)">
+                        <option value="Null"></option>
+                        <option value="Pass">Pass</option>
+                        <option value="Fail">Fail</option>
+                        <option value="Does Not Apply">Does Not Apply</option>
+                      </select>
+                        <div id="3.1.1-page-language-defined-SW-description-div" style="display:none">
+                          <label for="3.1.1-page-language-defined-SW-description">Failure Description:</label>
+                          <div>
+                            <textarea id="3.1.1-page-language-defined-SW-description" width="100%"></textarea>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>3.1.1-page-language-match-SW</th>
+                      <td>12.D</td>
+                      <td>The value of the UIA Culture property attribute matches the determined default human language for the software. See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd318693(v=vs.85).aspx">Language Identifier Constants and Strings for Culture property value definitions.</a> (
+                        <span id="LangMatchPageSW-Show" class="InstructionShow">
+                        <a href="javascript:void(0)" onclick="ShowDetail(this)">Show instruction detail <i class="fas fa-angle-double-right" aria-hidden="true"></i></a></span>
+                        <span id="LangMatchPageSW-Hide" class="InstructionHide" style="display:none">
+                        <a href="javascript:void(0)" onclick="HideDetail(this)">Hide instruction detail <i class="fas fa-angle-double-down" aria-hidden="true"></i></a></span>)
+
+                        <div class="w3-padding-16 InstructionDetail" id="LangMatchPageSW-Detail" style="display:none">
+                          <p>Here is some additional detail about how to use the ANDI tool to find language attributes on a web page...</p>
+                          <p>Placeholder text</p>
+                          <div class="w3-container">
+                            <ol>
+                              <li>The primary language subtag is the first 2 or 3 character code in the value of the lang attribute. (Do not test additional language specifications that may follow the primary language subtag.)</li>
+                              <li>The primary language subtag must conform to the Internet Assigned Numbers Authority's IANA Language subtag registry.</li>
+                            </ol>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <select id="3.1.1-page-language-match-SW" onchange="ShowHide_description(this)">
+                        <option value="Null"></option>
+                        <option value="Pass">Pass</option>
+                        <option value="Fail">Fail</option>
+                        <option value="Does Not Apply">Does Not Apply</option>
+                      </select>
+                        <div id="3.1.1-page-language-match-SW-description-div" style="display:none">
+                          <label for="3.1.1-page-language-match-SW-description">Failure Description:</label>
+                          <div>
+                            <textarea id="3.1.1-page-language-match-SW-description" width="100%"></textarea>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Language of Parts -->
+        <h3>Language of Parts</h3>
+         <div>
+          <p>Identify all pages with text. Review the page content to identify the default human language of the page (the language in which most of the page is presented).
+          </p>
+          <div>
+
+            <!--Language of Parts for WEB-->
+            <div class="WebTest" id="divweb2">
+              <div class="test-intro">
+                <p>
+                  <h4><strong>FOR WEB:</strong> Use <abbr title="Accessible Name and Description Inspector">ANDI</abbr> to check that:</p>
+                </h4>
+              </div>
+
+              <div class="w3-row">
+                <div class="w3-container">
+
+                  <table width="100%">
+                    <tr>
+                      <th width="10%">Test Name</th>
+                      <th width="5%">Test ID</th>
+                      <th width="65%">Test Condition</th>
+                      <th width="20%">Result</th>
+                    </tr>
+                    <tr>
+                      <th class="colth">3.1.2-part-language-defined-Web</th>
+                      <td>12.E</td>
+                      <td>The <code>lang</code> attribute is defined on the <code><i><</i>html<i>></i></code> element for the page. (
+                        <span id="LangPart-Show" class="InstructionShow">
+                        <a href="javascript:void(0)" onclick="ShowDetail(this)">Show instruction detail <i class="fas fa-angle-double-right" aria-hidden="true"></i></a></span>
+                        <span id="LangPart-Hide" class="InstructionHide" style="display:none">
+                        <a href="javascript:void(0)" onclick="HideDetail(this)">Hide instruction detail <i class="fas fa-angle-double-down" aria-hidden="true"></i></a></span>)
+
+                        <div class="w3-padding-16 InstructionDetail" id="LangPart-Detail" style="display:none">
+                          <p>Use sANDI (Select "Structures" from the ANDI module dropdown, then select lang attributes) to check that the lang attribute is defined on the <code><i><</i>html<i>></i></code>  element for the page.</p>
+                          <p>Launch ANDI from your browser's bookmarks, then select "structures" from the "Select Module" dropdown menu.</p>
+                          <img src="https://section508coordinators.github.io/BaselineTestPages/TestPages/images/Select_sANDI.png" width="100%" alt="Screen capture of selecting 'structures' from the 'Select Module' dropdown menu"></img>
+                          <p>Click the "lang attributes" link in the sANDI module. Locate the markup added to the web page that identifies the element to which the attribute is applied and the language defined in the language attribute value (e.g., "en" for English).</p>
+                          <img src="https://section508coordinators.github.io/BaselineTestPages/TestPages/images/LangAttribute.png" width="100%" alt="Screen capture of selecting the 'lang attributes' link with the markup for the lang attribute highlighted on the screen"></img>
+                          <p><strong>Note:</strong></p>
+                          <ul>
+                            <li>The primary language subtag is the first 2 or 3 character code in the value of the lang attribute. (Do not test additional language specifications that may follow the primary language subtag.)</li>
+                            <li>The primary language subtag must conform to the <a href="http://www.iana.org/assignments/language-subtag-registry">Internet Assigned Numbers Authority's (IANA) Language subtag registry.</a></li>
+                          </ul>
+                        </div>
+                      </td>
+                      <td>
+                        <select id="3.1.2-part-language-defined-web" onchange="ShowHide_description(this)">
+                        <option value="Null"></option>
+                        <option value="Pass">Pass</option>
+                        <option value="Fail">Fail</option>
+                        <option value="Does Not Apply">Does Not Apply</option>
+                      </select>
+                        <div id="3.1.2-part-language-defined-web-description-div" style="display:none">
+                          <label for="3.1.2-part-language-defined-web-description">Failure Description:</label>
+                          <div>
+                            <textarea id="3.1.2-part-language-defined-web-description" width="100%"></textarea>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>3.1.2-part-language-match-Web</th>
+                      <td>12.F</td>
+                      <td>The value of the <code>lang</code> attribute matches the determined default human language for the page. (
+                        <span id="LangMatchPart-Show" class="InstructionShow">
+                        <a href="javascript:void(0)" onclick="ShowDetail(this)">Show instruction detail <i class="fas fa-angle-double-right" aria-hidden="true"></i></a></span>
+                        <span id="LangMatchPart-Hide" class="InstructionHide" style="display:none">
+                        <a href="javascript:void(0)" onclick="HideDetail(this)">Hide instruction detail <i class="fas fa-angle-double-down" aria-hidden="true"></i></a></span>)
+
+                        <div class="w3-padding-16 InstructionDetail" id="LangMatchPart-Detail" style="display:none">
+                          <p>Use sANDI to identify the language attribute value and evaluate whether the defined value matches the default human language for the page.</p>
+                          <p>Launch ANDI from your browser's bookmarks, then select "structures" from the "Select Module" dropdown menu.</p>
+                          <img src="https://section508coordinators.github.io/BaselineTestPages/TestPages/images/Select_sANDI.png" width="100%" alt="Screen capture of selecting 'structures' from the 'Select Module' dropdown menu"></img>
+                          <p>Click the "lang attributes" link in the sANDI module. Locate the markup added to the web page that identifies the element to which the attribute is applied and the language defined in the language attribute value (e.g., "en" for English).</p>
+                          <img src="https://section508coordinators.github.io/BaselineTestPages/TestPages/images/LangAttribute.png" width="100%" alt="Screen capture of selecting the 'lang attributes' link with the markup for the lang attribute highlighted on the screen"></img>
+                          <p>Consult the <a href="http://www.iana.org/assignments/language-subtag-registry">Internet Assigned Numbers Authority's (IANA) Language subtag registry.</a> to determine whether the language is properly defined and matches the default human language for the page.</p>
+                          <p><strong>Note:</strong></p>
+                          <ul>
+                            <li>The primary language subtag is the first 2 or 3 character code in the value of the lang attribute. (Do not test additional language specifications that may follow the primary language subtag.)</li>
+                            <li>The primary language subtag must conform to the <a href="http://www.iana.org/assignments/language-subtag-registry">Internet Assigned Numbers Authority's (IANA) Language subtag registry.</a></li>
+                          </ul>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <select id="3.1.2-part-language-match-web" onchange="ShowHide_description(this)">
+                        <option value="Null"></option>
+                        <option value="Pass">Pass</option>
+                        <option value="Fail">Fail</option>
+                        <option value="Does Not Apply">Does Not Apply</option>
+                      </select>
+                        <div id="3.1.2-part-language-match-web-description-div" style="display:none">
+                          <label for="3.1.2-part-language-match-web-description">Failure Description:</label>
+                          <div>
+                            <textarea id="3.1.2-part-language-match-web-description" width="100%"></textarea>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+            
+            <!--Language of Part for SOFWTARE-->
+            <div class="SWTest">
+              <div class="test-intro">
+                <p>
+                  <h4><strong>FOR SOFTWARE:</strong> Use Inspect to check that:</p>
+                </h4>
+              </div>
+              <div class="w3-row">
+                <div class="w3-container">
+                  <table width="100%">
+                    <tr>
+                      <th width="10%">Test Name</th>
+                      <th width="5%">Test ID</th>
+                      <th width="65%">Test Condition</th>
+                      <th width="25%">Result</th>
+                    </tr>
+                    <tr>
+                      <th class="colth">3.1.2-part-language-defined-SW</th>
+                      <td>12.G</td>
+                      <td>The UIA Culture property is defined on the primary application node of the UIA tree and/or the primary node that contains all of the text content for the application. (
+                        <span id="LangPartSW-Show" class="InstructionShow">
+                        <a href="javascript:void(0)" onclick="ShowDetail(this)">Show instruction detail <i class="fas fa-angle-double-right" aria-hidden="true"></i></a></span>
+                        <span id="LangPartSW-Hide" class="InstructionHide" style="display:none">
+                        <a href="javascript:void(0)" onclick="HideDetail(this)">Hide instruction detail <i class="fas fa-angle-double-down" aria-hidden="true"></i></a></span>)
+
+                        <div class="w3-padding-16 InstructionDetail" id="LangPartSW-Detail" style="display:none">
+                          <p>Here is some additional detail about how to use the ANDI tool to find language attributes on a web page...</p>
+                        </div>
+                      </td>
+                      <td>
+                        <select id="3.1.2-part-language-defined-SW" onchange="ShowHide_description(this)">
+                        <option value="Null"></option>
+                        <option value="Pass">Pass</option>
+                        <option value="Fail">Fail</option>
+                        <option value="Does Not Apply">Does Not Apply</option>
+                      </select>
+                        <div id="3.1.2-part-language-defined-SW-description-div" style="display:none">
+                          <label for="3.1.2-part-language-defined-SW-description">Failure Description:</label>
+                          <div>
+                            <textarea id="3.1.2-part-language-defined-SW-description" width="100%"></textarea>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>3.1.2-part-language-match-SW</th>
+                      <td>12.H</td>
+                      <td>The value of the UIA Culture property attribute matches the determined default human language for the software. See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd318693(v=vs.85).aspx">Language Identifier Constants and Strings for Culture property value definitions.</a> (
+                        <span id="LangMatchPartSW-Show" class="InstructionShow">
+                        <a href="javascript:void(0)" onclick="ShowDetail(this)">Show instruction detail <i class="fas fa-angle-double-right" aria-hidden="true"></i></a></span>
+                        <span id="LangMatchPartSW-Hide" class="InstructionHide" style="display:none">
+                        <a href="javascript:void(0)" onclick="HideDetail(this)">Hide instruction detail <i class="fas fa-angle-double-down" aria-hidden="true"></i></a></span>)
+
+                        <div class="w3-padding-16 InstructionDetail" id="LangMatchPartSW-Detail" style="display:none">
+                          <p>Here is some additional detail about how to use the ANDI tool to find language attributes on a web page...</p>
+                          <p>Placeholder text</p>
+                          <div class="w3-container">
+                            <ol>
+                              <li>The primary language subtag is the first 2 or 3 character code in the value of the lang attribute. (Do not test additional language specifications that may follow the primary language subtag.)</li>
+                              <li>The primary language subtag must conform to the Internet Assigned Numbers Authority's IANA Language subtag registry.</li>
+                            </ol>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <select id="3.1.2-part-language-match-SW" onchange="ShowHide_description(this)">
+                        <option value="Null"></option>
+                        <option value="Pass">Pass</option>
+                        <option value="Fail">Fail</option>
+                        <option value="Does Not Apply">Does Not Apply</option>
+                      </select>
+                        <div id="3.1.2-part-language-match-SW-description-div" style="display:none">
+                          <label for="3.1.2-part-language-match-SW-description">Failure Description:</label>
+                          <div>
+                            <textarea id="3.1.2-part-language-match-SW-description" width="100%"></textarea>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+            <h3>Applicable Standards</h3>
+            <h4>Section 508/WCAG Success Criteria</h4>
+            <p><a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/meaning-doc-lang-id.html">WCAG SC 3.1.1 Language of Page</a> – The default human language of each Web page can be programmatically determined.</p>
+            <p><a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/meaning-other-lang-id.html">WCAG SC 3.1.2 Language of Parts</a> – The human language of each passage or phrase in the content can be programmatically determined except for proper names, technical
+              terms, words of indeterminate language, and words or phrases that have become part of the vernacular of the immediately surrounding text.</p>
+            <h4>Baseline Requirements</h4>
+            <p><a href="https://section508coordinators.github.io/ICTTestingBaseline/15Language.html">15. Language</a></p>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+</main>
+
+<script src="js/index.js"></script>
+  
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
