@@ -2,4 +2,3 @@
 This page serves as a placeholder to reference other pages and files within this GitHub Pages site
 ## Images
 * [Park Activity Pie](images/ParkActivityPie.png)
-* [JIRA Issue Collector Test Page](JIRA-IssueTest.html)
